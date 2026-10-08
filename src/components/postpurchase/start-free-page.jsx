@@ -37,6 +37,9 @@ const interestOptions = [
   'Other / General Query',
 ];
 
+// Configure your FormSubmit.co recipient email:
+const FORMSUBMIT_EMAIL = 'adityasharma08093@gmail.com';
+
 export default function StartFreePage() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -63,7 +66,7 @@ export default function StartFreePage() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.fullName || !formData.email || !formData.brandName) {
       alert('Please fill in your name, email, and brand name.');
@@ -72,27 +75,58 @@ export default function StartFreePage() {
 
     setIsSubmitting(true);
 
-    // Simulate reliable form submission & persist inquiry to localStorage
-    setTimeout(() => {
-      const generatedTicket = `AVR-${Math.floor(100000 + Math.random() * 900000)}`;
-      setTicketId(generatedTicket);
+    const generatedTicket = `AVR-${Math.floor(100000 + Math.random() * 900000)}`;
+    setTicketId(generatedTicket);
 
-      try {
-        const existing = JSON.parse(localStorage.getItem('avira_inquiries') || '[]');
-        existing.push({
-          ...formData,
-          ticketId: generatedTicket,
-          submittedAt: new Date().toISOString(),
-        });
-        localStorage.setItem('avira_inquiries', JSON.stringify(existing));
-      } catch (err) {
-        console.warn('LocalStorage save error:', err);
-      }
+    const volumeLabel =
+      orderVolumeOptions.find((o) => o.id === formData.monthlyOrders)?.label ||
+      formData.monthlyOrders;
 
-      setIsSubmitting(false);
-      setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 700);
+    const payload = {
+      'Ticket ID': generatedTicket,
+      'Full Name': formData.fullName,
+      'Work Email': formData.email,
+      'Phone / WhatsApp': formData.phone || 'Not provided',
+      'Brand / Store': formData.brandName,
+      'Website / Social': formData.website || 'Not provided',
+      'Monthly Delivered Orders': volumeLabel,
+      'Interests / Requirements': formData.interests.join(', ') || 'General Pilot',
+      'Query / Message': formData.message || 'No additional message provided',
+      _subject: `New AVIRA Pilot Request: ${formData.brandName} (${formData.fullName}) [#${generatedTicket}]`,
+      _template: 'table',
+      _captcha: 'false',
+    };
+
+    try {
+      // Send real email via FormSubmit.co AJAX endpoint
+      await fetch(`https://formsubmit.co/ajax/${FORMSUBMIT_EMAIL}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      console.warn('FormSubmit notification (saved locally as backup):', err);
+    }
+
+    // Persist inquiry in browser localStorage as backup
+    try {
+      const existing = JSON.parse(localStorage.getItem('avira_inquiries') || '[]');
+      existing.push({
+        ...formData,
+        ticketId: generatedTicket,
+        submittedAt: new Date().toISOString(),
+      });
+      localStorage.setItem('avira_inquiries', JSON.stringify(existing));
+    } catch (err) {
+      console.warn('LocalStorage save error:', err);
+    }
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -149,7 +183,7 @@ export default function StartFreePage() {
               <p>Our team is available for brand partnerships and bespoke packaging design requests.</p>
               <div className="contact-meta-row">
                 <Mail size={16} />
-                <span>support@avira.design</span>
+                <span>adityasharma08093@gmail.com</span>
               </div>
               <div className="contact-meta-row">
                 <Building2 size={16} />
