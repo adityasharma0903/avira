@@ -183,7 +183,7 @@ export default function StartFreePage() {
               <p>Our team is available for brand partnerships and bespoke packaging design requests.</p>
               <div className="contact-meta-row">
                 <Mail size={16} />
-                <span>adityasharma08093@gmail.com</span>
+                <span>avira.d2c@gmail.com</span>
               </div>
               <div className="contact-meta-row">
                 <Building2 size={16} />
