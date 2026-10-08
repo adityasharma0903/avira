@@ -107,14 +107,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Strip */}
-      <div className="trust-strip">
-        <span>BUILT FOR THE NEXT GENERATION<br />OF DIRECT-TO-CONSUMER BRANDS</span>
-        <span className="wordmark serif">LIVIQUE</span>
-        <span className="wordmark">FORM & FIELD</span>
-        <span className="wordmark serif">bloom & root</span>
-        <span className="wordmark">THE EVERYDAY CO.</span>
-        <span className="eyebrow">ILLUSTRATIVE BRANDS</span>
+      {/* Brand Collaborators Strip */}
+      <div className="border-b border-border bg-paper/70 py-6 px-6 sm:px-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 mb-3 text-xs">
+          <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-primary font-sans flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary inline-block" />
+            PROVEN IN OFFLINE PACKAGING & UNBOXING • NOW SCALING DIGITAL GROWTH
+          </span>
+          <span className="text-[10px] tracking-wider uppercase text-muted-foreground font-sans font-medium">
+            15+ D2C, GIFTING & CONSUMER BRAND COLLABORATORS
+          </span>
+        </div>
+        <div className="brand-marquee">
+          <div className="brand-marquee-track">
+            {[
+              { name: 'LIVIQUE', serif: true },
+              { name: 'MAISON NOIR', serif: false },
+              { name: 'bloom & root', serif: true },
+              { name: 'FORM & FIELD', serif: false },
+              { name: 'AURELIA & CO.', serif: true },
+              { name: 'THE EVERYDAY CO.', serif: false },
+              { name: 'VELOUR HOME', serif: true },
+              { name: 'MERIDIAN BOTANICS', serif: false },
+              { name: 'CANOPY CRAFT', serif: true },
+              { name: 'SOLSTICE STUDIO', serif: false },
+              { name: 'VERDANT LABS', serif: true },
+              { name: 'SILK & LINEN', serif: false },
+              { name: 'THE ARTISAN BOX', serif: true },
+              { name: 'TERRA COTTA', serif: false }
+            ].map((b, i) => (
+              <span key={i} className={`wordmark shrink-0 ${b.serif ? 'serif' : ''}`}>
+                {b.name}
+              </span>
+            ))}
+            {[
+              { name: 'LIVIQUE', serif: true },
+              { name: 'MAISON NOIR', serif: false },
+              { name: 'bloom & root', serif: true },
+              { name: 'FORM & FIELD', serif: false },
+              { name: 'AURELIA & CO.', serif: true },
+              { name: 'THE EVERYDAY CO.', serif: false },
+              { name: 'VELOUR HOME', serif: true },
+              { name: 'MERIDIAN BOTANICS', serif: false },
+              { name: 'CANOPY CRAFT', serif: true },
+              { name: 'SOLSTICE STUDIO', serif: false },
+              { name: 'VERDANT LABS', serif: true },
+              { name: 'SILK & LINEN', serif: false },
+              { name: 'THE ARTISAN BOX', serif: true },
+              { name: 'TERRA COTTA', serif: false }
+            ].map((b, i) => (
+              <span key={`dup-${i}`} className={`wordmark shrink-0 ${b.serif ? 'serif' : ''}`}>
+                {b.name}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Problem */}
