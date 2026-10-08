@@ -4,30 +4,50 @@ import { describe, expect, it } from "vitest";
 
 import { routeTree } from "@/routeTree.gen";
 
-// Match routes without running loaders or rendering: loaders may need a server or
-// network the test run lacks, and jsdom never loads the stylesheets React waits on.
-describe("App routing", () => {
-  it("matches a page for / instead of falling back to not found", () => {
-    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+describe("App routing & SEO Information Architecture", () => {
+  const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 
-    const matches = router.matchRoutes("/");
+  const testRoutes = [
+    "/",
+    "/templates",
+    "/start-free",
+    "/demo",
+    "/how-it-works",
+    "/for-brands",
+    "/pricing",
+    "/case-studies",
+    "/about",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/security",
+    "/features",
+    "/features/ugc",
+    "/features/referrals",
+    "/features/rewards",
+    "/features/reviews",
+    "/features/post-purchase-engagement",
+    "/features/customer-retention",
+    "/features/repeat-purchases",
+    "/features/qr-experiences",
+    "/features/post-purchase-analytics",
+    "/industries",
+    "/industries/d2c",
+    "/industries/gifting",
+    "/industries/beauty",
+    "/industries/fashion",
+    "/resources",
+    "/resources/post-purchase-experience",
+    "/resources/d2c-customer-retention",
+    "/resources/post-purchase-strategy-for-gifting-brands",
+    "/resources/how-to-get-more-ugc",
+    "/q/sample-token"
+  ];
 
-    expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
-  });
-
-  it("matches a page for /templates instead of falling back to not found", () => {
-    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
-
-    const matches = router.matchRoutes("/templates");
-
-    expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
-  });
-
-  it("matches a page for /start-free instead of falling back to not found", () => {
-    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
-
-    const matches = router.matchRoutes("/start-free");
-
-    expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
+  testRoutes.forEach((path) => {
+    it(`matches a page for ${path} without falling back to not found`, () => {
+      const matches = router.matchRoutes(path);
+      expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
+    });
   });
 });

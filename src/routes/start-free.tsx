@@ -14,8 +14,13 @@ export const Route = createFileRoute('/start-free')({
         property: 'og:description',
         content: 'Tell us about your brand packaging. Request custom QR card templates or launch a 14-day free pilot.',
       },
+      { property: 'og:url', content: 'https://avirad2c.app/start-free' },
       { property: 'og:type', content: 'website' },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
+    links: [
+      { rel: 'canonical', href: 'https://avirad2c.app/start-free' }
+    ]
   }),
   component: StartFreePage,
 });

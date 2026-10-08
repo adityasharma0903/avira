@@ -17,17 +17,17 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
+        <h1 className="text-7xl font-display font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          The page you're looking for doesn't exist or has moved. Return to the AVIRA homepage.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Return to Homepage
           </Link>
         </div>
       </div>
@@ -73,15 +73,58 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://avirad2c.app/#organization",
+      "name": "AVIRA",
+      "alternateName": "AVIRA D2C",
+      "url": "https://avirad2c.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://avirad2c.app/favicon.svg"
+      },
+      "description": "AVIRA D2C is a post-purchase growth platform helping D2C, e-commerce and gifting brands turn delivered orders into UGC, referrals, rewards and repeat purchases.",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://avirad2c.app/#website",
+      "url": "https://avirad2c.app/",
+      "name": "AVIRA D2C",
+      "description": "Post-Purchase Growth Platform for D2C & E-Commerce Brands",
+      "publisher": {
+        "@id": "https://avirad2c.app/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://avirad2c.app/#software",
+      "name": "AVIRA D2C Platform",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://avirad2c.app/",
+      "description": "Post-purchase customer engagement, UGC collection, honest reviews, referrals, and repeat purchase retention software.",
+      "provider": {
+        "@id": "https://avirad2c.app/#organization"
+      }
+    }
+  ]
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AVIRA — Growth beyond delivery" },
-      { name: "description", content: "Turn packaging into customer engagement and repeat purchases." },
-      { property: "og:title", content: "AVIRA — Growth beyond delivery" },
-      { property: "og:description", content: "Turn packaging into customer engagement and repeat purchases." },
+      { title: "AVIRA D2C | Post-Purchase Growth Platform" },
+      {
+        name: "description",
+        content: "AVIRA D2C helps e-commerce, D2C and gifting brands turn delivered orders into UGC, referrals, rewards and repeat purchases."
+      },
+      { property: "og:site_name", content: "AVIRA D2C" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -91,7 +134,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(organizationSchema),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,7 +171,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );

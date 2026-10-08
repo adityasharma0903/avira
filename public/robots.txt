@@ -1,14 +1,17 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# AVIRA D2C Robots.txt
+# Official Website: https://avirad2c.app/
 
 User-agent: *
 Allow: /
+
+# Disallow private application, admin, and customer QR sessions
+Disallow: /app/
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /q/
+
+# Explicit search engine sitemap declaration
+Sitemap: https://avirad2c.app/sitemap.xml

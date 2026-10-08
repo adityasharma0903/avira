@@ -10,18 +10,88 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as ForBrandsRouteImport } from './routes/for-brands'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SecurityRouteImport } from './routes/security'
 import { Route as StartFreeRouteImport } from './routes/start-free'
 import { Route as TemplatesRouteImport } from './routes/templates'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as FeaturesIndexRouteImport } from './routes/features/index'
+import { Route as FeaturesCustomerRetentionRouteImport } from './routes/features/customer-retention'
+import { Route as FeaturesPostPurchaseAnalyticsRouteImport } from './routes/features/post-purchase-analytics'
+import { Route as FeaturesPostPurchaseEngagementRouteImport } from './routes/features/post-purchase-engagement'
+import { Route as FeaturesQrExperiencesRouteImport } from './routes/features/qr-experiences'
+import { Route as FeaturesReferralsRouteImport } from './routes/features/referrals'
+import { Route as FeaturesRepeatPurchasesRouteImport } from './routes/features/repeat-purchases'
+import { Route as FeaturesReviewsRouteImport } from './routes/features/reviews'
+import { Route as FeaturesRewardsRouteImport } from './routes/features/rewards'
+import { Route as FeaturesUgcRouteImport } from './routes/features/ugc'
+import { Route as IndustriesIndexRouteImport } from './routes/industries/index'
+import { Route as IndustriesBeautyRouteImport } from './routes/industries/beauty'
+import { Route as IndustriesD2cRouteImport } from './routes/industries/d2c'
+import { Route as IndustriesFashionRouteImport } from './routes/industries/fashion'
+import { Route as IndustriesGiftingRouteImport } from './routes/industries/gifting'
+import { Route as QTokenRouteImport } from './routes/q/$token'
+import { Route as ResourcesIndexRouteImport } from './routes/resources/index'
+import { Route as ResourcesD2cCustomerRetentionRouteImport } from './routes/resources/d2c-customer-retention'
+import { Route as ResourcesHowToGetMoreUgcRouteImport } from './routes/resources/how-to-get-more-ugc'
+import { Route as ResourcesPostPurchaseExperienceRouteImport } from './routes/resources/post-purchase-experience'
+import { Route as ResourcesPostPurchaseStrategyForGiftingBrandsRouteImport } from './routes/resources/post-purchase-strategy-for-gifting-brands'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForBrandsRoute = ForBrandsRouteImport.update({
+  id: '/for-brands',
+  path: '/for-brands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StartFreeRoute = StartFreeRouteImport.update({
@@ -34,39 +104,379 @@ const TemplatesRoute = TemplatesRouteImport.update({
   path: '/templates',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesIndexRoute = FeaturesIndexRouteImport.update({
+  id: '/features/',
+  path: '/features/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesCustomerRetentionRoute =
+  FeaturesCustomerRetentionRouteImport.update({
+    id: '/features/customer-retention',
+    path: '/features/customer-retention',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FeaturesPostPurchaseAnalyticsRoute =
+  FeaturesPostPurchaseAnalyticsRouteImport.update({
+    id: '/features/post-purchase-analytics',
+    path: '/features/post-purchase-analytics',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FeaturesPostPurchaseEngagementRoute =
+  FeaturesPostPurchaseEngagementRouteImport.update({
+    id: '/features/post-purchase-engagement',
+    path: '/features/post-purchase-engagement',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FeaturesQrExperiencesRoute = FeaturesQrExperiencesRouteImport.update({
+  id: '/features/qr-experiences',
+  path: '/features/qr-experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesReferralsRoute = FeaturesReferralsRouteImport.update({
+  id: '/features/referrals',
+  path: '/features/referrals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRepeatPurchasesRoute = FeaturesRepeatPurchasesRouteImport.update({
+  id: '/features/repeat-purchases',
+  path: '/features/repeat-purchases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesReviewsRoute = FeaturesReviewsRouteImport.update({
+  id: '/features/reviews',
+  path: '/features/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRewardsRoute = FeaturesRewardsRouteImport.update({
+  id: '/features/rewards',
+  path: '/features/rewards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesUgcRoute = FeaturesUgcRouteImport.update({
+  id: '/features/ugc',
+  path: '/features/ugc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
+  id: '/industries/',
+  path: '/industries/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesBeautyRoute = IndustriesBeautyRouteImport.update({
+  id: '/industries/beauty',
+  path: '/industries/beauty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesD2cRoute = IndustriesD2cRouteImport.update({
+  id: '/industries/d2c',
+  path: '/industries/d2c',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesFashionRoute = IndustriesFashionRouteImport.update({
+  id: '/industries/fashion',
+  path: '/industries/fashion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesGiftingRoute = IndustriesGiftingRouteImport.update({
+  id: '/industries/gifting',
+  path: '/industries/gifting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QTokenRoute = QTokenRouteImport.update({
+  id: '/q/$token',
+  path: '/q/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
+  id: '/resources/',
+  path: '/resources/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesD2cCustomerRetentionRoute =
+  ResourcesD2cCustomerRetentionRouteImport.update({
+    id: '/resources/d2c-customer-retention',
+    path: '/resources/d2c-customer-retention',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesHowToGetMoreUgcRoute =
+  ResourcesHowToGetMoreUgcRouteImport.update({
+    id: '/resources/how-to-get-more-ugc',
+    path: '/resources/how-to-get-more-ugc',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesPostPurchaseExperienceRoute =
+  ResourcesPostPurchaseExperienceRouteImport.update({
+    id: '/resources/post-purchase-experience',
+    path: '/resources/post-purchase-experience',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ResourcesPostPurchaseStrategyForGiftingBrandsRoute =
+  ResourcesPostPurchaseStrategyForGiftingBrandsRouteImport.update({
+    id: '/resources/post-purchase-strategy-for-gifting-brands',
+    path: '/resources/post-purchase-strategy-for-gifting-brands',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/for-brands': typeof ForBrandsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/start-free': typeof StartFreeRoute
   '/templates': typeof TemplatesRoute
+  '/terms': typeof TermsRoute
+  '/features/customer-retention': typeof FeaturesCustomerRetentionRoute
+  '/features/post-purchase-analytics': typeof FeaturesPostPurchaseAnalyticsRoute
+  '/features/post-purchase-engagement': typeof FeaturesPostPurchaseEngagementRoute
+  '/features/qr-experiences': typeof FeaturesQrExperiencesRoute
+  '/features/referrals': typeof FeaturesReferralsRoute
+  '/features/repeat-purchases': typeof FeaturesRepeatPurchasesRoute
+  '/features/reviews': typeof FeaturesReviewsRoute
+  '/features/rewards': typeof FeaturesRewardsRoute
+  '/features/ugc': typeof FeaturesUgcRoute
+  '/industries/beauty': typeof IndustriesBeautyRoute
+  '/industries/d2c': typeof IndustriesD2cRoute
+  '/industries/fashion': typeof IndustriesFashionRoute
+  '/industries/gifting': typeof IndustriesGiftingRoute
+  '/q/$token': typeof QTokenRoute
+  '/resources/d2c-customer-retention': typeof ResourcesD2cCustomerRetentionRoute
+  '/resources/how-to-get-more-ugc': typeof ResourcesHowToGetMoreUgcRoute
+  '/resources/post-purchase-experience': typeof ResourcesPostPurchaseExperienceRoute
+  '/resources/post-purchase-strategy-for-gifting-brands': typeof ResourcesPostPurchaseStrategyForGiftingBrandsRoute
+  '/features/': typeof FeaturesIndexRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/for-brands': typeof ForBrandsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/start-free': typeof StartFreeRoute
   '/templates': typeof TemplatesRoute
+  '/terms': typeof TermsRoute
+  '/features/customer-retention': typeof FeaturesCustomerRetentionRoute
+  '/features/post-purchase-analytics': typeof FeaturesPostPurchaseAnalyticsRoute
+  '/features/post-purchase-engagement': typeof FeaturesPostPurchaseEngagementRoute
+  '/features/qr-experiences': typeof FeaturesQrExperiencesRoute
+  '/features/referrals': typeof FeaturesReferralsRoute
+  '/features/repeat-purchases': typeof FeaturesRepeatPurchasesRoute
+  '/features/reviews': typeof FeaturesReviewsRoute
+  '/features/rewards': typeof FeaturesRewardsRoute
+  '/features/ugc': typeof FeaturesUgcRoute
+  '/industries/beauty': typeof IndustriesBeautyRoute
+  '/industries/d2c': typeof IndustriesD2cRoute
+  '/industries/fashion': typeof IndustriesFashionRoute
+  '/industries/gifting': typeof IndustriesGiftingRoute
+  '/q/$token': typeof QTokenRoute
+  '/resources/d2c-customer-retention': typeof ResourcesD2cCustomerRetentionRoute
+  '/resources/how-to-get-more-ugc': typeof ResourcesHowToGetMoreUgcRoute
+  '/resources/post-purchase-experience': typeof ResourcesPostPurchaseExperienceRoute
+  '/resources/post-purchase-strategy-for-gifting-brands': typeof ResourcesPostPurchaseStrategyForGiftingBrandsRoute
+  '/features': typeof FeaturesIndexRoute
+  '/industries': typeof IndustriesIndexRoute
+  '/resources': typeof ResourcesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/for-brands': typeof ForBrandsRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/security': typeof SecurityRoute
   '/start-free': typeof StartFreeRoute
   '/templates': typeof TemplatesRoute
+  '/terms': typeof TermsRoute
+  '/features/customer-retention': typeof FeaturesCustomerRetentionRoute
+  '/features/post-purchase-analytics': typeof FeaturesPostPurchaseAnalyticsRoute
+  '/features/post-purchase-engagement': typeof FeaturesPostPurchaseEngagementRoute
+  '/features/qr-experiences': typeof FeaturesQrExperiencesRoute
+  '/features/referrals': typeof FeaturesReferralsRoute
+  '/features/repeat-purchases': typeof FeaturesRepeatPurchasesRoute
+  '/features/reviews': typeof FeaturesReviewsRoute
+  '/features/rewards': typeof FeaturesRewardsRoute
+  '/features/ugc': typeof FeaturesUgcRoute
+  '/industries/beauty': typeof IndustriesBeautyRoute
+  '/industries/d2c': typeof IndustriesD2cRoute
+  '/industries/fashion': typeof IndustriesFashionRoute
+  '/industries/gifting': typeof IndustriesGiftingRoute
+  '/q/$token': typeof QTokenRoute
+  '/resources/d2c-customer-retention': typeof ResourcesD2cCustomerRetentionRoute
+  '/resources/how-to-get-more-ugc': typeof ResourcesHowToGetMoreUgcRoute
+  '/resources/post-purchase-experience': typeof ResourcesPostPurchaseExperienceRoute
+  '/resources/post-purchase-strategy-for-gifting-brands': typeof ResourcesPostPurchaseStrategyForGiftingBrandsRoute
+  '/features/': typeof FeaturesIndexRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/demo' | '/start-free' | '/templates'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/contact'
+    | '/demo'
+    | '/for-brands'
+    | '/how-it-works'
+    | '/pricing'
+    | '/privacy'
+    | '/security'
+    | '/start-free'
+    | '/templates'
+    | '/terms'
+    | '/features/customer-retention'
+    | '/features/post-purchase-analytics'
+    | '/features/post-purchase-engagement'
+    | '/features/qr-experiences'
+    | '/features/referrals'
+    | '/features/repeat-purchases'
+    | '/features/reviews'
+    | '/features/rewards'
+    | '/features/ugc'
+    | '/industries/beauty'
+    | '/industries/d2c'
+    | '/industries/fashion'
+    | '/industries/gifting'
+    | '/q/$token'
+    | '/resources/d2c-customer-retention'
+    | '/resources/how-to-get-more-ugc'
+    | '/resources/post-purchase-experience'
+    | '/resources/post-purchase-strategy-for-gifting-brands'
+    | '/features/'
+    | '/industries/'
+    | '/resources/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/demo' | '/start-free' | '/templates'
-  id: '__root__' | '/' | '/demo' | '/start-free' | '/templates'
+  to:
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/contact'
+    | '/demo'
+    | '/for-brands'
+    | '/how-it-works'
+    | '/pricing'
+    | '/privacy'
+    | '/security'
+    | '/start-free'
+    | '/templates'
+    | '/terms'
+    | '/features/customer-retention'
+    | '/features/post-purchase-analytics'
+    | '/features/post-purchase-engagement'
+    | '/features/qr-experiences'
+    | '/features/referrals'
+    | '/features/repeat-purchases'
+    | '/features/reviews'
+    | '/features/rewards'
+    | '/features/ugc'
+    | '/industries/beauty'
+    | '/industries/d2c'
+    | '/industries/fashion'
+    | '/industries/gifting'
+    | '/q/$token'
+    | '/resources/d2c-customer-retention'
+    | '/resources/how-to-get-more-ugc'
+    | '/resources/post-purchase-experience'
+    | '/resources/post-purchase-strategy-for-gifting-brands'
+    | '/features'
+    | '/industries'
+    | '/resources'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/contact'
+    | '/demo'
+    | '/for-brands'
+    | '/how-it-works'
+    | '/pricing'
+    | '/privacy'
+    | '/security'
+    | '/start-free'
+    | '/templates'
+    | '/terms'
+    | '/features/customer-retention'
+    | '/features/post-purchase-analytics'
+    | '/features/post-purchase-engagement'
+    | '/features/qr-experiences'
+    | '/features/referrals'
+    | '/features/repeat-purchases'
+    | '/features/reviews'
+    | '/features/rewards'
+    | '/features/ugc'
+    | '/industries/beauty'
+    | '/industries/d2c'
+    | '/industries/fashion'
+    | '/industries/gifting'
+    | '/q/$token'
+    | '/resources/d2c-customer-retention'
+    | '/resources/how-to-get-more-ugc'
+    | '/resources/post-purchase-experience'
+    | '/resources/post-purchase-strategy-for-gifting-brands'
+    | '/features/'
+    | '/industries/'
+    | '/resources/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CaseStudiesRoute: typeof CaseStudiesRoute
+  ContactRoute: typeof ContactRoute
   DemoRoute: typeof DemoRoute
+  ForBrandsRoute: typeof ForBrandsRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  SecurityRoute: typeof SecurityRoute
   StartFreeRoute: typeof StartFreeRoute
   TemplatesRoute: typeof TemplatesRoute
+  TermsRoute: typeof TermsRoute
+  FeaturesCustomerRetentionRoute: typeof FeaturesCustomerRetentionRoute
+  FeaturesPostPurchaseAnalyticsRoute: typeof FeaturesPostPurchaseAnalyticsRoute
+  FeaturesPostPurchaseEngagementRoute: typeof FeaturesPostPurchaseEngagementRoute
+  FeaturesQrExperiencesRoute: typeof FeaturesQrExperiencesRoute
+  FeaturesReferralsRoute: typeof FeaturesReferralsRoute
+  FeaturesRepeatPurchasesRoute: typeof FeaturesRepeatPurchasesRoute
+  FeaturesReviewsRoute: typeof FeaturesReviewsRoute
+  FeaturesRewardsRoute: typeof FeaturesRewardsRoute
+  FeaturesUgcRoute: typeof FeaturesUgcRoute
+  IndustriesBeautyRoute: typeof IndustriesBeautyRoute
+  IndustriesD2cRoute: typeof IndustriesD2cRoute
+  IndustriesFashionRoute: typeof IndustriesFashionRoute
+  IndustriesGiftingRoute: typeof IndustriesGiftingRoute
+  QTokenRoute: typeof QTokenRoute
+  ResourcesD2cCustomerRetentionRoute: typeof ResourcesD2cCustomerRetentionRoute
+  ResourcesHowToGetMoreUgcRoute: typeof ResourcesHowToGetMoreUgcRoute
+  ResourcesPostPurchaseExperienceRoute: typeof ResourcesPostPurchaseExperienceRoute
+  ResourcesPostPurchaseStrategyForGiftingBrandsRoute: typeof ResourcesPostPurchaseStrategyForGiftingBrandsRoute
+  FeaturesIndexRoute: typeof FeaturesIndexRoute
+  IndustriesIndexRoute: typeof IndustriesIndexRoute
+  ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,11 +488,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/demo': {
       id: '/demo'
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-brands': {
+      id: '/for-brands'
+      path: '/for-brands'
+      fullPath: '/for-brands'
+      preLoaderRoute: typeof ForBrandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/start-free': {
@@ -99,14 +565,199 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TemplatesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/': {
+      id: '/features/'
+      path: '/features'
+      fullPath: '/features/'
+      preLoaderRoute: typeof FeaturesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/customer-retention': {
+      id: '/features/customer-retention'
+      path: '/features/customer-retention'
+      fullPath: '/features/customer-retention'
+      preLoaderRoute: typeof FeaturesCustomerRetentionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/post-purchase-analytics': {
+      id: '/features/post-purchase-analytics'
+      path: '/features/post-purchase-analytics'
+      fullPath: '/features/post-purchase-analytics'
+      preLoaderRoute: typeof FeaturesPostPurchaseAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/post-purchase-engagement': {
+      id: '/features/post-purchase-engagement'
+      path: '/features/post-purchase-engagement'
+      fullPath: '/features/post-purchase-engagement'
+      preLoaderRoute: typeof FeaturesPostPurchaseEngagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/qr-experiences': {
+      id: '/features/qr-experiences'
+      path: '/features/qr-experiences'
+      fullPath: '/features/qr-experiences'
+      preLoaderRoute: typeof FeaturesQrExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/referrals': {
+      id: '/features/referrals'
+      path: '/features/referrals'
+      fullPath: '/features/referrals'
+      preLoaderRoute: typeof FeaturesReferralsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/repeat-purchases': {
+      id: '/features/repeat-purchases'
+      path: '/features/repeat-purchases'
+      fullPath: '/features/repeat-purchases'
+      preLoaderRoute: typeof FeaturesRepeatPurchasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/reviews': {
+      id: '/features/reviews'
+      path: '/features/reviews'
+      fullPath: '/features/reviews'
+      preLoaderRoute: typeof FeaturesReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/rewards': {
+      id: '/features/rewards'
+      path: '/features/rewards'
+      fullPath: '/features/rewards'
+      preLoaderRoute: typeof FeaturesRewardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/ugc': {
+      id: '/features/ugc'
+      path: '/features/ugc'
+      fullPath: '/features/ugc'
+      preLoaderRoute: typeof FeaturesUgcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/': {
+      id: '/industries/'
+      path: '/industries'
+      fullPath: '/industries/'
+      preLoaderRoute: typeof IndustriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/beauty': {
+      id: '/industries/beauty'
+      path: '/industries/beauty'
+      fullPath: '/industries/beauty'
+      preLoaderRoute: typeof IndustriesBeautyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/d2c': {
+      id: '/industries/d2c'
+      path: '/industries/d2c'
+      fullPath: '/industries/d2c'
+      preLoaderRoute: typeof IndustriesD2cRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/fashion': {
+      id: '/industries/fashion'
+      path: '/industries/fashion'
+      fullPath: '/industries/fashion'
+      preLoaderRoute: typeof IndustriesFashionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/gifting': {
+      id: '/industries/gifting'
+      path: '/industries/gifting'
+      fullPath: '/industries/gifting'
+      preLoaderRoute: typeof IndustriesGiftingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/q/$token': {
+      id: '/q/$token'
+      path: '/q/$token'
+      fullPath: '/q/$token'
+      preLoaderRoute: typeof QTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/': {
+      id: '/resources/'
+      path: '/resources'
+      fullPath: '/resources/'
+      preLoaderRoute: typeof ResourcesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/d2c-customer-retention': {
+      id: '/resources/d2c-customer-retention'
+      path: '/resources/d2c-customer-retention'
+      fullPath: '/resources/d2c-customer-retention'
+      preLoaderRoute: typeof ResourcesD2cCustomerRetentionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/how-to-get-more-ugc': {
+      id: '/resources/how-to-get-more-ugc'
+      path: '/resources/how-to-get-more-ugc'
+      fullPath: '/resources/how-to-get-more-ugc'
+      preLoaderRoute: typeof ResourcesHowToGetMoreUgcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/post-purchase-experience': {
+      id: '/resources/post-purchase-experience'
+      path: '/resources/post-purchase-experience'
+      fullPath: '/resources/post-purchase-experience'
+      preLoaderRoute: typeof ResourcesPostPurchaseExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources/post-purchase-strategy-for-gifting-brands': {
+      id: '/resources/post-purchase-strategy-for-gifting-brands'
+      path: '/resources/post-purchase-strategy-for-gifting-brands'
+      fullPath: '/resources/post-purchase-strategy-for-gifting-brands'
+      preLoaderRoute: typeof ResourcesPostPurchaseStrategyForGiftingBrandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CaseStudiesRoute: CaseStudiesRoute,
+  ContactRoute: ContactRoute,
   DemoRoute: DemoRoute,
+  ForBrandsRoute: ForBrandsRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  SecurityRoute: SecurityRoute,
   StartFreeRoute: StartFreeRoute,
   TemplatesRoute: TemplatesRoute,
+  TermsRoute: TermsRoute,
+  FeaturesCustomerRetentionRoute: FeaturesCustomerRetentionRoute,
+  FeaturesPostPurchaseAnalyticsRoute: FeaturesPostPurchaseAnalyticsRoute,
+  FeaturesPostPurchaseEngagementRoute: FeaturesPostPurchaseEngagementRoute,
+  FeaturesQrExperiencesRoute: FeaturesQrExperiencesRoute,
+  FeaturesReferralsRoute: FeaturesReferralsRoute,
+  FeaturesRepeatPurchasesRoute: FeaturesRepeatPurchasesRoute,
+  FeaturesReviewsRoute: FeaturesReviewsRoute,
+  FeaturesRewardsRoute: FeaturesRewardsRoute,
+  FeaturesUgcRoute: FeaturesUgcRoute,
+  IndustriesBeautyRoute: IndustriesBeautyRoute,
+  IndustriesD2cRoute: IndustriesD2cRoute,
+  IndustriesFashionRoute: IndustriesFashionRoute,
+  IndustriesGiftingRoute: IndustriesGiftingRoute,
+  QTokenRoute: QTokenRoute,
+  ResourcesD2cCustomerRetentionRoute: ResourcesD2cCustomerRetentionRoute,
+  ResourcesHowToGetMoreUgcRoute: ResourcesHowToGetMoreUgcRoute,
+  ResourcesPostPurchaseExperienceRoute: ResourcesPostPurchaseExperienceRoute,
+  ResourcesPostPurchaseStrategyForGiftingBrandsRoute:
+    ResourcesPostPurchaseStrategyForGiftingBrandsRoute,
+  FeaturesIndexRoute: FeaturesIndexRoute,
+  IndustriesIndexRoute: IndustriesIndexRoute,
+  ResourcesIndexRoute: ResourcesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
