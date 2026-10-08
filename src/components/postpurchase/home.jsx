@@ -327,20 +327,62 @@ export default function Home() {
           <p>From your first hundred orders to your next thousand.</p>
         </Reveal>
         <div className="pricing-grid">
-          {plans.map((plan, i) => (
-            <Reveal className={`pricing-plan ${i === 1 ? 'popular' : ''}`} key={plan.name}>
-              {i === 1 && <span className="popular-tag">MOST POPULAR</span>}
-              <span className="plan-name">{plan.name.toUpperCase()}</span>
-              <div className="plan-price">₹{plan.price.toLocaleString('en-IN')}<span>/ month</span></div>
-              <p>{plan.description}</p>
-              <Button variant={i === 1 ? 'ivory' : 'default'} asChild>
-                <Link to="/start-free">Start Free Pilot <ArrowUpRight /></Link>
+          {plans.map((plan) => (
+            <Reveal className={`pricing-plan ${plan.popular ? 'popular' : ''} flex flex-col justify-between`} key={plan.name}>
+              <div>
+                {plan.popular && <span className="popular-tag">MOST POPULAR ⭐</span>}
+                <div className="flex items-center justify-between mb-1">
+                  <span className="plan-name">{plan.name.toUpperCase()}</span>
+                  <span className={`text-[10px] font-sans px-2.5 py-0.5 rounded-full ${plan.popular ? 'bg-white/20 text-white' : 'bg-background border border-border text-foreground/80'}`}>
+                    {plan.cardsIncluded}
+                  </span>
+                </div>
+                <div className="plan-price">₹{plan.price.toLocaleString('en-IN')}<span>/ month</span></div>
+                {plan.effectiveCost && (
+                  <div className={`text-[11px] font-sans font-semibold -mt-2 mb-2 ${plan.popular ? 'text-sage' : 'text-primary'}`}>
+                    {plan.effectiveCost}
+                  </div>
+                )}
+                <p>{plan.description}</p>
+                <div className="space-y-2 pt-3 pb-6 border-t border-border/40 text-left">
+                  {plan.features.slice(0, 5).map((f) => (
+                    <div key={f} className={`flex items-start gap-2 text-xs font-sans ${plan.popular ? 'text-ivory/90' : 'text-foreground/80'}`}>
+                      <Check className={`h-3.5 w-3.5 shrink-0 mt-0.5 ${plan.popular ? 'text-sage' : 'text-primary'}`} />
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                  {plan.features.length > 5 && (
+                    <div className={`text-[11px] font-sans italic pt-1 ${plan.popular ? 'text-ivory/70' : 'text-muted-foreground'}`}>
+                      + {plan.features.length - 5} more capabilities included
+                    </div>
+                  )}
+                </div>
+              </div>
+              <Button variant={plan.popular ? 'ivory' : 'default'} asChild className="w-full">
+                <Link to={plan.ctaLink}>{plan.ctaText} <ArrowUpRight /></Link>
               </Button>
             </Reveal>
           ))}
         </div>
-        <p className="pricing-note">
-          Physical QR cards available separately. <Link to="/pricing" className="underline ml-1">View full plan comparison →</Link>
+
+        {/* Deliverable Assurance Grid */}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center max-w-4xl mx-auto">
+          <div className="p-4 rounded-lg border border-border bg-paper/60">
+            <strong className="block text-xs font-sans uppercase tracking-wider text-primary mb-1">📦 Physical Cards Included</strong>
+            <p className="text-[11px] text-muted-foreground font-sans leading-relaxed">350 GSM luxury matte artboard cards with custom brand design & QR matrix shipped directly to your door.</p>
+          </div>
+          <div className="p-4 rounded-lg border border-border bg-paper/60">
+            <strong className="block text-xs font-sans uppercase tracking-wider text-primary mb-1">📱 Zero App Friction</strong>
+            <p className="text-[11px] text-muted-foreground font-sans leading-relaxed">Instant camera scan launches a fast mobile unboxing experience for UGC, reviews, and dynamic reward unlocks.</p>
+          </div>
+          <div className="p-4 rounded-lg border border-border bg-paper/60">
+            <strong className="block text-xs font-sans uppercase tracking-wider text-primary mb-1">⚡ Extra Cards from ₹799</strong>
+            <p className="text-[11px] text-muted-foreground font-sans leading-relaxed">Order additional card batches (₹7.99/card) anytime without being forced into a higher software tier.</p>
+          </div>
+        </div>
+
+        <p className="pricing-note mt-6">
+          Need custom volume or multi-brand fulfillment? <Link to="/pricing" className="underline ml-1 font-medium text-foreground">View full plan comparison & additional card economics →</Link>
         </p>
       </section>
 
