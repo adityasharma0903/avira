@@ -38,7 +38,7 @@ const interestOptions = [
 ];
 
 // Configure your FormSubmit.co recipient email:
-const FORMSUBMIT_EMAIL = 'adityasharma08093@gmail.com';
+const FORMSUBMIT_EMAIL = 'avira.d2c@gmail.com';
 
 export default function StartFreePage() {
   const [formData, setFormData] = useState({
