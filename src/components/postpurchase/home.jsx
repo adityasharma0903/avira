@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Header, Footer, Reveal, QRCard, RewardCard, Phone, Counter, Button, packageImage, customerImage, ArrowUpRight, ArrowRight, ScanLine, Check, Camera, Users, Package } from './elements';
+import VideoShowcase from './video-showcase';
 import { plans } from '@/lib/product';
 
 const journey = [
@@ -163,6 +164,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Product Video Film Showcase */}
+      <VideoShowcase />
 
       {/* Problem */}
       <section className="section problem" id="product">
