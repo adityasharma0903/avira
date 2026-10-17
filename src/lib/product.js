@@ -1,58 +1,72 @@
 export const plans = [
   {
     name: 'Starter',
-    displayName: 'AVIRA STARTER',
+    displayName: 'STARTER',
     price: 2999,
     description: 'For brands starting their post-purchase journey.',
-    cardsIncluded: '250 cards / month',
-    effectiveCost: 'Effective: ₹12/order',
+    cardsIncluded: '100 premium AVIRA cards/month',
+    effectiveCost: 'Effective: ₹30/order',
     ctaText: 'Start with AVIRA →',
     ctaLink: '/start-free',
     features: [
-      '250 cards / month',
-      'Custom-branded QR experience',
-      'Premium card design',
-      'Reviews and UGC flows',
-      'Rewards, offers and referrals',
-      'Campaign analytics',
-      'Brand links and social engagement'
+      '100 premium AVIRA cards/month',
+      'Custom QR experience',
+      'UGC collection',
+      'Honest review collection',
+      'Referral campaigns',
+      'Basic rewards',
+      'Basic analytics',
+      'AVIRA-branded experience',
+      'Campaign setup',
+      'Email support'
     ]
   },
   {
     name: 'Growth',
-    displayName: 'AVIRA GROWTH',
+    displayName: 'GROWTH',
     price: 4999,
     description: 'For brands ready to turn orders into growth.',
-    cardsIncluded: '750 cards / month',
-    effectiveCost: 'Effective: ₹6.7/order',
+    cardsIncluded: '500 premium cards/month',
+    effectiveCost: 'Effective: ₹10/order',
     ctaText: 'Start Growing →',
     ctaLink: '/start-free',
     popular: true,
     features: [
-      '750 cards / month',
+      '500 premium cards/month',
       'Everything in Starter',
-      'Multiple campaign variations',
-      'Customer journey reporting',
-      'Shopify integration, where supported',
-      'Priority onboarding and support'
+      'Custom branding',
+      'Multiple campaigns',
+      'Advanced UGC campaigns',
+      'Referral rewards',
+      'Store-credit / coupon rewards',
+      'Advanced analytics',
+      'Customer journey tracking',
+      'Shopify integration',
+      'Remove AVIRA branding',
+      'Priority support'
     ]
   },
   {
     name: 'Scale',
-    displayName: 'AVIRA SCALE',
+    displayName: 'SCALE',
     price: 9999,
     description: 'For brands with thousands of orders.',
-    cardsIncluded: '2,000 cards / month',
-    effectiveCost: 'Effective: ₹5/order',
+    cardsIncluded: '2,000 premium cards/month',
+    effectiveCost: 'High-volume scale',
     ctaText: 'Talk to AVIRA →',
     ctaLink: '/contact',
     features: [
-      '2,000 cards / month',
+      '2,000 premium cards/month',
       'Everything in Growth',
-      'Advanced campaign workflows',
-      'Customer segmentation and attribution',
-      'API/webhooks, where supported',
-      'Dedicated onboarding and priority support'
+      'Unlimited campaigns',
+      'Advanced segmentation',
+      'Automated reward flows',
+      'Advanced attribution',
+      'Shopify + WooCommerce',
+      'API / webhooks',
+      'Custom domain',
+      'Dedicated onboarding',
+      'Priority support'
     ]
   }
 ];

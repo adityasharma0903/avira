@@ -396,12 +396,17 @@ export default function Home() {
                 )}
                 <p>{plan.description}</p>
                 <div className="space-y-2 pt-3 pb-6 border-t border-border/40 text-left">
-                  {plan.features.map((f) => (
+                  {plan.features.slice(0, 5).map((f) => (
                     <div key={f} className={`flex items-start gap-2 text-xs font-sans ${plan.popular ? 'text-ivory/90' : 'text-foreground/80'}`}>
                       <Check className={`h-3.5 w-3.5 shrink-0 mt-0.5 ${plan.popular ? 'text-sage' : 'text-primary'}`} />
                       <span>{f}</span>
                     </div>
                   ))}
+                  {plan.features.length > 5 && (
+                    <div className={`text-[11px] font-sans italic pt-1 ${plan.popular ? 'text-ivory/70' : 'text-muted-foreground'}`}>
+                      + {plan.features.length - 5} more capabilities included
+                    </div>
+                  )}
                 </div>
               </div>
               <Button variant={plan.popular ? 'ivory' : 'default'} asChild className="w-full">
