@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { Header, Footer, Reveal, Button, ArrowUpRight, ArrowRight, Check, Package } from './elements';
-import { plans, cardAddonPricing } from '@/lib/product';
+import { plans, cardAddonPricing, pricingNote } from '@/lib/product';
 
 export default function PricingPage() {
   return (
@@ -41,7 +41,9 @@ export default function PricingPage() {
                   )}
                   
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs uppercase font-semibold text-primary tracking-widest">{plan.name}</span>
+                    <span className="text-xs uppercase font-semibold text-primary tracking-widest">
+                      {plan.displayName || `AVIRA ${plan.name.toUpperCase()}`}
+                    </span>
                     <span className="text-[11px] font-sans px-2.5 py-0.5 rounded-full bg-background border border-border text-muted-foreground">
                       {plan.cardsIncluded}
                     </span>
@@ -87,6 +89,20 @@ export default function PricingPage() {
               </Reveal>
             ))}
           </div>
+
+          {/* PRICING NOTE */}
+          <Reveal className="mt-12 max-w-4xl mx-auto p-6 sm:p-8 rounded-xl bg-paper/90 border border-border text-center shadow-xs">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-primary font-semibold block mb-2">
+              {pricingNote.title}
+            </span>
+            <p className="text-xs sm:text-sm text-muted-foreground font-sans leading-relaxed max-w-2xl mx-auto mb-5">
+              {pricingNote.text}
+            </p>
+            <div className="pt-4 border-t border-border/70 flex flex-col sm:flex-row items-center justify-between text-[11px] text-foreground/80 font-sans tracking-wider gap-2">
+              <strong className="tracking-widest uppercase text-foreground">{pricingNote.tagline}</strong>
+              <span className="font-mono text-primary font-semibold">{pricingNote.brandLine}</span>
+            </div>
+          </Reveal>
         </div>
       </section>
 

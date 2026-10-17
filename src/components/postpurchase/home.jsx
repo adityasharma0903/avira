@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Header, Footer, Reveal, QRCard, RewardCard, Phone, Counter, Button, packageImage, customerImage, ArrowUpRight, ArrowRight, ScanLine, Check, Camera, Users, Package } from './elements';
 import VideoShowcase from './video-showcase';
-import { plans } from '@/lib/product';
+import { plans, pricingNote } from '@/lib/product';
 
 const journey = [
   ['01 / THE ORDER', 'It starts with\nan order.', 'A new customer. A first impression. And the beginning of something bigger.', 'order'],
@@ -383,7 +383,7 @@ export default function Home() {
               <div>
                 {plan.popular && <span className="popular-tag">MOST POPULAR ⭐</span>}
                 <div className="flex items-center justify-between mb-1">
-                  <span className="plan-name">{plan.name.toUpperCase()}</span>
+                  <span className="plan-name">{plan.displayName || plan.name.toUpperCase()}</span>
                   <span className={`text-[10px] font-sans px-2.5 py-0.5 rounded-full ${plan.popular ? 'bg-white/20 text-white' : 'bg-background border border-border text-foreground/80'}`}>
                     {plan.cardsIncluded}
                   </span>
@@ -396,17 +396,12 @@ export default function Home() {
                 )}
                 <p>{plan.description}</p>
                 <div className="space-y-2 pt-3 pb-6 border-t border-border/40 text-left">
-                  {plan.features.slice(0, 5).map((f) => (
+                  {plan.features.map((f) => (
                     <div key={f} className={`flex items-start gap-2 text-xs font-sans ${plan.popular ? 'text-ivory/90' : 'text-foreground/80'}`}>
                       <Check className={`h-3.5 w-3.5 shrink-0 mt-0.5 ${plan.popular ? 'text-sage' : 'text-primary'}`} />
                       <span>{f}</span>
                     </div>
                   ))}
-                  {plan.features.length > 5 && (
-                    <div className={`text-[11px] font-sans italic pt-1 ${plan.popular ? 'text-ivory/70' : 'text-muted-foreground'}`}>
-                      + {plan.features.length - 5} more capabilities included
-                    </div>
-                  )}
                 </div>
               </div>
               <Button variant={plan.popular ? 'ivory' : 'default'} asChild className="w-full">
@@ -427,8 +422,22 @@ export default function Home() {
             <p className="text-[11px] text-muted-foreground font-sans leading-relaxed">Instant camera scan launches a fast mobile unboxing experience for UGC, reviews, and dynamic reward unlocks.</p>
           </div>
           <div className="p-4 rounded-lg border border-border bg-paper/60">
-            <strong className="block text-xs font-sans uppercase tracking-wider text-primary mb-1">⚡ Extra Cards from ₹799</strong>
-            <p className="text-[11px] text-muted-foreground font-sans leading-relaxed">Order additional card batches (₹7.99/card) anytime without being forced into a higher software tier.</p>
+            <strong className="block text-xs font-sans uppercase tracking-wider text-primary mb-1">⚡ Extra Cards Available</strong>
+            <p className="text-[11px] text-muted-foreground font-sans leading-relaxed">Order additional card batches anytime without being forced into a higher software tier.</p>
+          </div>
+        </div>
+
+        {/* Official PRICING NOTE */}
+        <div className="mt-8 max-w-4xl mx-auto p-5 sm:p-6 rounded-xl bg-paper/80 border border-border text-center shadow-xs">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-primary font-semibold block mb-1.5">
+            {pricingNote.title}
+          </span>
+          <p className="text-[11px] sm:text-xs text-muted-foreground font-sans leading-relaxed max-w-2xl mx-auto mb-3">
+            {pricingNote.text}
+          </p>
+          <div className="pt-2.5 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-[11px] text-foreground/75 font-sans tracking-wider gap-1.5">
+            <strong className="tracking-widest uppercase text-foreground">{pricingNote.tagline}</strong>
+            <span className="font-mono text-primary font-medium">{pricingNote.brandLine}</span>
           </div>
         </div>
 

@@ -3,8 +3,8 @@ import { plans, reward, isRewardEligible, demoMetrics } from '../lib/product';
 
 describe('AVIRA product rules', () => {
   it('Starter costs ₹2,999 per month', () => expect(plans.find(p => p.name === 'Starter').price).toBe(2999));
-  it('Growth costs ₹6,999 per month', () => expect(plans.find(p => p.name === 'Growth').price).toBe(6999));
-  it('Scale costs ₹14,999 per month', () => expect(plans.find(p => p.name === 'Scale').price).toBe(14999));
+  it('Growth costs ₹4,999 per month', () => expect(plans.find(p => p.name === 'Growth').price).toBe(4999));
+  it('Scale costs ₹9,999 per month', () => expect(plans.find(p => p.name === 'Scale').price).toBe(9999));
   it('reward is ₹150 off', () => expect(reward.amount).toBe(150));
   it('reward code is LIVIQUE150', () => expect(reward.code).toBe('LIVIQUE150'));
   it('reward is valid 30 days', () => expect(reward.validDays).toBe(30));
